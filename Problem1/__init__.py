@@ -25,7 +25,6 @@ import_size = 20000                                                     # sample
 rand_sample = [0]
 rand_counter = import_size
 while rand_counter > 0:
-# for i in range(import_size):
     rand_nr = numpy.random.random_integers( 1, rows )
     if rand_nr in rand_sample:
         continue
@@ -33,10 +32,10 @@ while rand_counter > 0:
         rand_sample.append( rand_nr )
         rand_counter -= 1
 choose_rows = sorted( rand_sample )
-print( 'chosen rows: %s' % choose_rows )
+# print( 'chosen rows: %s' % choose_rows )
 
 lines = pandas.read_csv( open(csvImport), skiprows = lambda x: x not in choose_rows )                 # StringIO(csvImport)
-print( lines )
+# print( lines )
 # print( type(lines) )
 # sample_out = open( 'sample.txt', 'w' )
 lines.to_csv( 'sample.csv', header=False, index=False )
