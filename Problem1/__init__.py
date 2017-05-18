@@ -82,7 +82,7 @@ if T_1_3:
     # responding either excellent, very good, good, fair or poor. The exerany variable indicates whether the
     # respondent exercised in the past month (1) or did not (0). Likewise, hlthplan indicates whether the respondent
     # had some form of health coverage (1) or did not (0). The smoke100 variable indicates whether the respondent
-    # had smoked at least 100 cigarettes in her lifetime. The other variables record the respondent’s height in inches
+    # had smoked at least 100 cigarettes in her lifetime. The other variables record the respondents height in inches
     # (hti) and feet (htf), weight in pounds as well as their desired weight, wtdesire, age in years, and gender.
 
     # 3.1. Locate the columns corresponding to the variables genhlth, exerany, htf, hti, smoke100, height, weight,
