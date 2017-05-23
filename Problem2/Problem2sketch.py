@@ -2,10 +2,8 @@
 
 # import standard libraries
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import seaborn as sb
 import random
 from scipy.stats import beta
 from scipy.special import gamma, binom
@@ -16,9 +14,12 @@ ax = fig.add_subplot(111, projection='3d')
 x = np.zeros(0)
 y = np.zeros(0)
 z = np.zeros(0)
-x =  np.concatenate((np.ones(167), np.zeros(167), np.random.rand(167*2), np.random.rand(167*2)), axis=0)
-y =  np.concatenate((np.random.rand(167*2), np.zeros(167), np.ones(167), np.random.rand(167*2)), axis=0)
-z =  np.concatenate((np.random.rand(167*2), np.random.rand(167*2), np.ones(167), np.zeros(167)), axis=0)
+x =  np.concatenate((np.ones(167), np.zeros(167), np.random.rand(167*2), 
+    np.random.rand(167*2)), axis=0)
+y =  np.concatenate((np.random.rand(167*2), np.zeros(167), np.ones(167), 
+    np.random.rand(167*2)), axis=0)
+z =  np.concatenate((np.random.rand(167*2), np.random.rand(167*2), 
+    np.ones(167), np.zeros(167)), axis=0)
 ax.scatter(x[0:1000],y[0:1000],z[0:1000])
 plt.show()
 
@@ -46,7 +47,8 @@ m = 10
 n = 4
 
 def probdata(rho,m,n):
-    return (rho**n)*(1-rho)**(m-n) * ((gamma(m-n+1)*gamma(n+1))/(gamma(m+2)))**(-1)
+    return (rho**n)*(1-rho)**(m-n) * 
+        ((gamma(m-n+1)*gamma(n+1))/(gamma(m+2)))**(-1)
 
 def probdata2(rho,m,n):
     return beta.pdf(rho, n+1, m-n+1)
@@ -55,3 +57,5 @@ plt.figure()
 plt.plot(probdata(rho,10,4))
 plt.plot(probdata(rho,10,5))
 plt.show()
+
+# not sure about part c)
