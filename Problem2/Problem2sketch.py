@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import seaborn as sb
 import random
+from scipy.stats import beta
+from scipy.special import gamma, binom
+import scipy.integrate as integrate
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -34,3 +37,21 @@ plt.show()
 plt.plot(r*np.cos(theta)*np.cos(phi), r*np.cos(theta)*np.sin(phi))
 plt.show()
 
+
+# Problem 4 Supernovae
+
+
+rho = np.arange(0,1,0.01)
+m = 10
+n = 4
+
+def probdata(rho,m,n):
+    return (rho**n)*(1-rho)**(m-n) * ((gamma(m-n+1)*gamma(n+1))/(gamma(m+2)))**(-1)
+
+def probdata2(rho,m,n):
+    return beta.pdf(rho, n+1, m-n+1)
+
+plt.figure()
+plt.plot(probdata(rho,10,4))
+plt.plot(probdata(rho,10,5))
+plt.show()
