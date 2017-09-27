@@ -7,7 +7,6 @@ from mpl_toolkits.mplot3d import Axes3D
 import random
 from scipy.stats import beta
 from scipy.special import gamma, binom
-import scipy.integrate as integrate
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -42,11 +41,9 @@ plt.show()
 # Problem 4 Supernovae
 
 
-rho = np.arange(0,1,0.01)
-m = 10
-n = 4
+rho = np.arange(0,1,0.02)
 
-def probdata(rho,m,n):
+def probdata(rho,m = 10,n = 4):
     return (rho**n)*(1-rho)**(m-n) * 
         ((gamma(m-n+1)*gamma(n+1))/(gamma(m+2)))**(-1)
 
